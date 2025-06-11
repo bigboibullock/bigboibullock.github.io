@@ -1,23 +1,19 @@
+---
+import WorkCategory from "./work-category.astro";
+---
+
 <ul>
   <li>
-    <a href="/work/animation">
-      <span>Animation</span>
-    </a>
+    <WorkCategory category="animation" />
   </li>
   <li>
-    <a href="/work/web">
-      <span>Web</span>
-    </a>
+    <WorkCategory category="web" />
   </li>
   <li>
-    <a href="/work/video">
-      <span>Video</span>
-    </a>
+    <WorkCategory category="video" />
   </li>
   <li>
-    <a href="/work/digital">
-      <span>Digital</span>
-    </a>
+    <WorkCategory category="digital" />
   </li>
 </ul>
 
@@ -55,17 +51,6 @@
     li {
       background: black;
       text-transform: uppercase;
-
-      a {
-        color: white;
-        text-decoration: none;
-        height: 100%;
-        width: 100%;
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
     }
   }
 </style>

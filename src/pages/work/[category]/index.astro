@@ -1,6 +1,7 @@
 ---
-import { getCollection, render } from "astro:content";
 import BaseLayout from "../../../layouts/base-layout.astro";
+import Picture from "astro/components/Picture.astro";
+import { getCategoryCollection, type Category } from "../../../utils";
 
 export async function getStaticPaths() {
   return [
@@ -14,26 +15,20 @@ export async function getStaticPaths() {
 
 const { category } = Astro.params;
 
-const items = await (async () => {
-  switch (category) {
-    case "animation":
-      return await getCollection("animation_work");
-    case "web":
-      return await getCollection("web_work");
-    case "video":
-      return await getCollection("video_work");
-    case "digital":
-      return await getCollection("digital_work");
-    default:
-      return await getCollection("work");
-  }
-})();
+const items = await getCategoryCollection(category as Category);
 ---
 
 <BaseLayout>
   {
     items.map((item: any) => (
-      <a href={"/work-entry/" + item.data.slug}>{item.data.title}</a>
+      <a href={"/work-entry/" + item.data.slug}>
+        <Picture
+          src={item.data.image}
+          formats={["avif", "webp"]}
+          alt={item.data.image_alt}
+        />
+        {item.data.title}
+      </a>
     ))
   }
 </BaseLayout>

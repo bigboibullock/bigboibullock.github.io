@@ -1,6 +1,6 @@
 ---
 title: Zendesk – Help My AI!
-slug: help-my-ai
+slug: digital-1
 description: Animated social & web campaign
 image: '../images/derek.png'
 image_alt: Picture of a silly looking animated dude
