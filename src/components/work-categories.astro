@@ -1,0 +1,46 @@
+<ul>
+  <li>Animation</li>
+  <li>Web</li>
+  <li>Video</li>
+  <li>Digital</li>
+</ul>
+
+<style>
+  ul {
+    height: 100%;
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+
+    gap: 1rem;
+
+    margin: 0;
+    padding: 0;
+
+    @media (width < 768px) {
+      padding-block-start: 2rem;
+
+      li {
+        aspect-ratio: 1;
+      }
+    }
+
+    @media (width >= 768px) {
+      display: grid;
+      grid-template-rows: repeat(4, 1fr);
+    }
+
+    @media (width >= 1128px) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+    }
+
+    li {
+      background: black;
+      color: white;
+      text-transform: uppercase;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+</style>

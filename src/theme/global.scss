@@ -1,3 +1,38 @@
 body {
+  --color-font-light: #7b7b7b;
+
+  height: 100%;
+  min-height: 100vh;
+  min-height: 100svh;
+
+  margin: 0;
+  padding: 1rem;
+
   font-family: var(--font-geist);
+  background-color: #f6f5f0;
+
+  @media (width >= 768px) {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+
+    aside {
+      grid-column: span 5;
+    }
+    section {
+      grid-column: span 6 / -1;
+    }
+  }
+
+  @media (width >= 1128px) {
+    aside {
+      grid-column: span 4;
+    }
+    section {
+      grid-column: span 7 / -1;
+    }
+  }
+}
+
+* {
+  box-sizing: border-box;
 }

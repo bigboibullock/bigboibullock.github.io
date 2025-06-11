@@ -1,4 +1,5 @@
 ---
+import { ClientRouter } from "astro:transitions";
 import { Font } from "astro:assets";
 
 import "../theme/global.scss";
@@ -15,11 +16,15 @@ import Nav from "../components/nav.astro";
     <meta name="generator" content={Astro.generator} />
     <Meta />
     <slot name="metadata" />
+
     <Font cssVariable="--font-geist" preload />
+    <ClientRouter />
   </head>
 
   <body>
     <Nav />
-    <slot />
+    <section>
+      <slot />
+    </section>
   </body>
 </html>
