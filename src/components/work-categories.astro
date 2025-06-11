@@ -1,8 +1,24 @@
 <ul>
-  <li>Animation</li>
-  <li>Web</li>
-  <li>Video</li>
-  <li>Digital</li>
+  <li>
+    <a href="/work/animation">
+      <span>Animation</span>
+    </a>
+  </li>
+  <li>
+    <a href="/work/web">
+      <span>Web</span>
+    </a>
+  </li>
+  <li>
+    <a href="/work/video">
+      <span>Video</span>
+    </a>
+  </li>
+  <li>
+    <a href="/work/digital">
+      <span>Digital</span>
+    </a>
+  </li>
 </ul>
 
 <style>
@@ -15,6 +31,8 @@
 
     margin: 0;
     padding: 0;
+
+    list-style-type: none;
 
     @media (width < 768px) {
       padding-block-start: 2rem;
@@ -36,11 +54,18 @@
 
     li {
       background: black;
-      color: white;
       text-transform: uppercase;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+
+      a {
+        color: white;
+        text-decoration: none;
+        height: 100%;
+        width: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
     }
   }
 </style>

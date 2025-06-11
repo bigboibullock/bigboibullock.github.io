@@ -1,0 +1,39 @@
+---
+import { getCollection, render } from "astro:content";
+import BaseLayout from "../../../layouts/base-layout.astro";
+
+export async function getStaticPaths() {
+  return [
+    { params: { category: "animation" } },
+    { params: { category: "web" } },
+    { params: { category: "video" } },
+    { params: { category: "digital" } },
+    { params: { category: "all" } },
+  ];
+}
+
+const { category } = Astro.params;
+
+const items = await (async () => {
+  switch (category) {
+    case "animation":
+      return await getCollection("animation_work");
+    case "web":
+      return await getCollection("web_work");
+    case "video":
+      return await getCollection("video_work");
+    case "digital":
+      return await getCollection("digital_work");
+    default:
+      return await getCollection("work");
+  }
+})();
+---
+
+<BaseLayout>
+  {
+    items.map((item: any) => (
+      <a href={"/work-entry/" + item.data.slug}>{item.data.title}</a>
+    ))
+  }
+</BaseLayout>
