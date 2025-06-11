@@ -1,5 +1,9 @@
 ---
-
+const Metadata = {
+  title: "Ryan Bullock - Digital Producer",
+  description:
+    "Dynamic and results-driven Producer with a passion for delivering innovative digital content and cutting-edge software applications on a global scale.",
+};
 ---
 
 <html lang="en">
@@ -8,9 +12,12 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-  </head>
+		<description>{Metadata.description}</description>
+  	<title>{Metadata.title}</title>
+	</head>
+
   <body>
     <h1>HEY RYAN</h1>
   </body>
+
 </html>
