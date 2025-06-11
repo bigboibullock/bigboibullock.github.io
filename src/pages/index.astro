@@ -1,17 +1,14 @@
 ---
-import Meta from "../components/meta.astro";
+import { getCollection } from "astro:content";
+import BaseLayout from "../layouts/base-layout.astro";
+
+const workItems = await getCollection("work");
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <Meta />
-  </head>
-
-  <body>
-    <h1>HEY RYAN</h1>
-  </body>
-</html>
+<BaseLayout>
+  {
+    workItems.map((item: any) => (
+      <a href={"/work/" + item.data.slug}>{item.data.title}</a>
+    ))
+  }
+</BaseLayout>

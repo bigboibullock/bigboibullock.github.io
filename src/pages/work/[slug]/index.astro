@@ -1,0 +1,23 @@
+---
+import { getCollection, render } from "astro:content";
+import BaseLayout from "../../../layouts/base-layout.astro";
+
+export async function getStaticPaths() {
+  const workItems = await getCollection("work");
+  return workItems.map((item) => ({
+    params: { slug: item.data.slug },
+    props: { item },
+  }));
+}
+
+const { item } = Astro.props;
+if (!item) throw new Error("No work item present for this slug.");
+
+const { Content } = await render(item);
+---
+
+<BaseLayout>
+  <h1>{item.data.title}</h1>
+  <p>{item.data.description}</p>
+  <Content />
+</BaseLayout>

@@ -1,0 +1,25 @@
+---
+import { Font } from "astro:assets";
+
+import "../theme/global.scss";
+
+import Meta from "../components/meta.astro";
+import Nav from "../components/nav.astro";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <Meta />
+    <slot name="metadata" />
+    <Font cssVariable="--font-geist" preload />
+  </head>
+
+  <body>
+    <Nav />
+    <slot />
+  </body>
+</html>
