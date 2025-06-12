@@ -12,7 +12,7 @@ const items = await getCategoryCollection(category);
 const firstItem = items[0];
 ---
 
-<a href={"/work/" + category}>
+<a href={`/work/${category}/`}>
   <Picture
     src={firstItem.data.image}
     formats={["avif", "webp"]}

@@ -1,16 +1,8 @@
 ---
-import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/base-layout.astro";
 import WorkCategories from "../components/work-categories.astro";
-
-const workItems = await getCollection("work");
 ---
 
 <BaseLayout>
   <WorkCategories />
-  <!-- {
-    workItems.map((item: any) => (
-      <a href={"/work/" + item.data.slug}>{item.data.title}</a>
-    ))
-  } -->
 </BaseLayout>
