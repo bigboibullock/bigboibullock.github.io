@@ -9,7 +9,6 @@ interface Props {
 const { category } = Astro.props;
 
 const items = await getCategoryCollection(category);
-console.log(category, items);
 const firstItem = items[0];
 ---
 
