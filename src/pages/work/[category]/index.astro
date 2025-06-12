@@ -21,7 +21,7 @@ const items = await getCategoryCollection(category as Category);
 <BaseLayout>
   {
     items.map((item: any) => (
-      <a href={`/work-entry/${item.data.slug}`}>
+      <a href={`/work-entry/${item.data.slug}/`}>
         <Picture
           src={item.data.image}
           formats={["avif", "webp"]}
